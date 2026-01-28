@@ -10,7 +10,7 @@ data class Student(
 ) {
 
     fun isValid(): Boolean {
-      return name.isNotBlank() && id.isNotBlank()
+      return fullName.isNotBlank() && id.isNotBlank()
     }
 
     fun toggleChecked(): Student {
