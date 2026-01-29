@@ -5,8 +5,8 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.studentsapp.model.Model
-import com.example.studentsapp.model.Student
+import com.lessons.studentsapp.model.Model
+import com.lessons.studentsapp.model.Student
 
 class EditStudentActivity : AppCompatActivity() {
 

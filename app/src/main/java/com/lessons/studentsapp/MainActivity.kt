@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.example.studentsapp.model.Model
-import com.example.studentsapp.model.Student
+import com.lessons.studentsapp.model.Model
+import com.lessons.studentsapp.model.Student
 
 class MainActivity : AppCompatActivity() {
 

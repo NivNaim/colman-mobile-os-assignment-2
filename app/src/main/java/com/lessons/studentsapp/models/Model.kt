@@ -1,4 +1,4 @@
-package com.example.studentsapp.model
+package com.lessons.studentsapp.model
 
 object Model {
     val students: MutableList<Student> = ArrayList()

@@ -7,7 +7,7 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.studentsapp.model.Student
+import com.lessons.studentsapp.model.Student
 
 interface OnItemClickListener {
     fun onItemClick(position: Int)

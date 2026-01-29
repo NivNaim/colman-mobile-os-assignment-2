@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.studentsapp.model.Model
+import com.lessons.studentsapp.model.Model
 
 class StudentDetailsActivity : AppCompatActivity() {
 

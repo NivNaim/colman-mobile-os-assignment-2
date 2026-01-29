@@ -1,4 +1,4 @@
-package com.example.studentsapp.model
+package com.lessons.studentsapp.model
 
 data class Student(
     var name: String,
