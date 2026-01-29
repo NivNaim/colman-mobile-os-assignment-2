@@ -7,63 +7,50 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.lessons.studentsapp.models.Student
+import com.example.studentsapp.model.Student
+
+interface OnItemClickListener {
+    fun onItemClick(position: Int)
+    fun onStudentClick(student: Student?)
+}
 
 class StudentAdapter(
-    private var items: List<Student>,
-    private val onStatusToggle: (id: String, index: Int) -> Unit,
-    private val onItemPressed: ((id: String) -> Unit)? = null
-) : RecyclerView.Adapter<StudentAdapter.StudentItemViewHolder>() {
+    private val students: List<Student>,
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentItemViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.student_row_layout, parent, false)
-        return StudentItemViewHolder(view)
+    class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nameTv: TextView = itemView.findViewById(R.id.student_row_name_tv)
+        val idTv: TextView = itemView.findViewById(R.id.student_row_id_tv)
+        val checkBox: CheckBox = itemView.findViewById(R.id.student_row_cb)
+        val image: ImageView = itemView.findViewById(R.id.student_row_image)
     }
 
-    override fun onBindViewHolder(holder: StudentItemViewHolder, position: Int) {
-        holder.render(items[position], onStatusToggle, onItemPressed)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
+        // We used "student_list_row" in the XML step. Make sure this matches that file name!
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.student_row_layout, parent, false)
+        return StudentViewHolder(view)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
+        val student = students[position]
 
-    fun updateData(newList: List<Student>) {
-        items = newList
-    }
+        holder.nameTv.text = student.name
+        holder.idTv.text = student.id
+        holder.image.setImageResource(R.drawable.ic_launcher_foreground)
 
-    class StudentItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        // Clear listener to avoid bugs when scrolling
+        holder.checkBox.setOnCheckedChangeListener(null)
+        holder.checkBox.isChecked = student.isChecked
 
-        private val avatarView: ImageView = view.findViewById(R.id.student_row_avatar)
-        private val nameLabel: TextView = view.findViewById(R.id.student_row_name)
-        private val idLabel: TextView = view.findViewById(R.id.student_row_id)
-        private val statusCheck: CheckBox = view.findViewById(R.id.student_row_checkbox)
+        holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
+            student.isChecked = isChecked
+        }
 
-        fun render(
-            student: Student,
-            onStatusToggle: (id: String, index: Int) -> Unit,
-            onItemPressed: ((id: String) -> Unit)?
-        ) {
-            nameLabel.text = student.name
-            idLabel.text = itemView.context.getString(
-                R.string.student_id_label,
-                student.id
-            )
-            avatarView.setImageResource(student.avatarResourceId)
-
-            // reset listener to avoid recycled state bugs
-            statusCheck.setOnCheckedChangeListener(null)
-            statusCheck.isChecked = student.isChecked
-
-            statusCheck.setOnCheckedChangeListener { _, _ ->
-                val index = bindingAdapterPosition
-                if (index != RecyclerView.NO_POSITION) {
-                    onStatusToggle(student.id, index)
-                }
-            }
-
-            itemView.setOnClickListener {
-                onItemPressed?.invoke(student.id)
-            }
+        holder.itemView.setOnClickListener {
+            listener.onStudentClick(student)
         }
     }
+
+    override fun getItemCount(): Int = students.size
 }

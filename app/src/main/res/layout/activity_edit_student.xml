@@ -39,7 +39,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/edit_student_name"
+                android:id="@+id/edit_name_et"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,7 +64,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/edit_student_id"
+                android:id="@+id/edit_id_et"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -90,7 +90,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/edit_student_phone"
+                android:id="@+id/edit_phone_et"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -115,7 +115,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/edit_student_address"
+                android:id="@+id/edit_address_et"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,7 +125,7 @@
         </LinearLayout>
 
         <CheckBox
-            android:id="@+id/edit_student_checked"
+            android:id="@+id/edit_cb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -139,7 +139,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/edit_student_delete"
+            android:id="@+id/edit_delete_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#D32F2F"
@@ -152,14 +152,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/edit_student_cancel"
+                android:id="@+id/edit_cancel_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/button_cancel" />
 
             <Button
-                android:id="@+id/edit_student_save"
+                android:id="@+id/edit_save_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

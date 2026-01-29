@@ -168,7 +168,7 @@
                 android:text="@string/button_back" />
 
             <Button
-                android:id="@+id/student_details_edit"
+                android:id="@+id/student_details_edit_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

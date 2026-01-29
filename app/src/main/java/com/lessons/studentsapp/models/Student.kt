@@ -1,19 +1,9 @@
-package com.lessons.studentsapp.models
+package com.example.studentsapp.model
 
 data class Student(
-    val id: String,
-    val fullName: String,
-    val phoneNumber: String = "",
-    val address: String = "",
-    val isChecked: Boolean = false,
-    val avatarResourceId: Int
-) {
-
-    fun isValid(): Boolean {
-      return fullName.isNotBlank() && id.isNotBlank()
-    }
-
-    fun toggleChecked(): Student {
-      return copy(isChecked = !isChecked)
-    }
-}
+    var name: String,
+    var id: String,
+    var phone: String,
+    var address: String,
+    var isChecked: Boolean = false
+)

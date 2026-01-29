@@ -10,7 +10,7 @@
     android:focusable="true">
 
     <ImageView
-        android:id="@+id/student_row_avatar"
+        android:id="@+id/student_row_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
@@ -24,7 +24,7 @@
         tools:srcCompat="@drawable/student_avatar" />
 
     <TextView
-        android:id="@+id/student_row_name"
+        android:id="@+id/student_row_name_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,27 +32,27 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-        app:layout_constraintBottom_toTopOf="@+id/student_row_id"
-        app:layout_constraintEnd_toStartOf="@+id/student_row_checkbox"
-        app:layout_constraintStart_toEndOf="@+id/student_row_avatar"
+        app:layout_constraintBottom_toTopOf="@+id/student_row_id_tv"
+        app:layout_constraintEnd_toStartOf="@+id/student_row_cb"
+        app:layout_constraintStart_toEndOf="@+id/student_row_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="John Doe" />
 
     <TextView
-        android:id="@+id/student_row_id"
+        android:id="@+id/student_row_id_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/student_row_name"
-        app:layout_constraintStart_toStartOf="@+id/student_row_name"
-        app:layout_constraintTop_toBottomOf="@+id/student_row_name"
+        app:layout_constraintEnd_toEndOf="@+id/student_row_name_tv"
+        app:layout_constraintStart_toStartOf="@+id/student_row_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/student_row_name_tv"
         tools:text="ID: 123456789" />
 
     <CheckBox
-        android:id="@+id/student_row_checkbox"
+        android:id="@+id/student_row_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
